@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
+
+body {
+	font-family: 'Roboto Mono';
+}
+
+#first-slide {
+	text-align: center;
+}
+
+#about-slide>table {
+	font-size: 10px;
+	padding: 0px;
+}
+
+table {
+	width: 100%;
+}
+th, td {
+	padding: 20px;
+	text-align: center;
+}
+dl {
+	-webkit-margin-before: 0em;
+}
+
+.center-slide {
+	text-align: center;
+}
+
+.center-image>img {
+	text-align: center;
+	display:block;
+    margin:auto;
+}
+
+.step {
+	width: 1000px;
+}
