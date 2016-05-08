@@ -30,6 +30,15 @@ M.Sc.Eng.Math.
 |            | **@hbldh** |             | 
 +------------+------------+-------------+ 
 
+.. note::
+
+	Hello and welcome to this presentation called The Point of Pointless Projects.
+
+	I am going to tell you about soem spare time programming projects of mine and from them try to extraoplate some insights about such projects in general.
+
+	My name is Henrik Blidh, I have a Master's Degree in Engineering Mathematics and this is you you can get in touch with me later on.
+
+
 ----
 
 :data-x: r3000
@@ -44,6 +53,18 @@ About me
 .. image:: images/aboutme.png 
 	:width: 1000px
 
+.. note::
+
+	This is me, my programming history.
+
+	I started out in Matlab, duing the early stages of my education.
+
+	Later courses branched out into Java and C, but my main language was still Matlab, which I regarded as kind of a necessary evil.
+
+	I started working in 2008, still coding in Matlab, and I was aquainted with Python first in 2010, when a newly hired employee suggested that
+	we should port our code to get better maintainablility. Since I hade built a distributed computational cluster in Matlab and C# and felt that
+	it was unnecessarily complex, I felt that it might be a good idea and I haven't looked back since.  
+
 ----
 
 
@@ -54,6 +75,9 @@ This talk will present four years worth of spare time coding, focusing very litt
 code written but rather describing both the intented and unintended effects of the coding.
 
 .. note::
+	
+	This talk will present four years worth of spare time coding, focusing very little on the actual 
+	code written but rather describing both the intented and unintended effects of the coding.
 
 	Almost all projects lead to some kind of increase in knowledge, but I will not list all the 
 	things I learned during the projects. If I did I would talk all day and you would find it
@@ -78,6 +102,14 @@ I love pointless projects!
 pointless != worthless
 ~~~~~~~~~~~~~~~~~~~~~~
 
+.. note::
+
+	Just so we're clear: 
+
+	I love pointless projects!
+
+	pointless != worthless
+
 ----
 
 What constitutes a pointless project?
@@ -100,12 +132,34 @@ Optional properties
 * Being the "wrong" way of performing the issue at hand
 * Addressing aspects of an issue not often scrutinized
 
+.. note::
+
+	What constitutes a pointless project?
+	
+	N.B. this is a personal, incomplete, definition!
+
+	* Little or no use to general public
+	* Created for either
+		1) educational purposes
+		2) artistical purposes
+		3) lulz
+
+
+	* Very time consuming
+	* Solving simple task in complex and/or complicated fashion
+	* Being the "wrong" way of performing the issue at hand
+	* Addressing aspects of an issue not often scrutinized
+
 ----
 
 :class: center-slide
 
 Let's look at some examples from the web!
 =========================================
+
+.. note::
+
+	Let's look at some examples from the web.
 
 ----
 
@@ -166,12 +220,23 @@ My father-in-law gave me a book of 365 Sudokus for Christmas in 2012.
 
 I solved about three of them and thought, "This could be automated..."
 
+.. note::
+
+	
+	The Advent of My Pointless Projects
+	
+	My father-in-law gave me a book of 365 Sudokus for Christmas in 2012.
+
+	I solved about three of them and thought, "This could be automated..."
+
 ----
 
 DLXSudoku
 =========
 
 .. note::
+	
+	Sudoku Solver in pure puthon, no dependencies.
 
 	When it was done, I realised that I would never use it since I would have to enter the Sudoku to solve manually.	
 
@@ -253,9 +318,65 @@ SudokuExtract
 
 	After doing some failed tests with Tesseract I decided to do it myself.
 
-	Read some papers. Decided on Elliptical Fourier Descriptors.
+	Read some papers. Decided on Elliptical Fourier Descriptors and Machine Learning.
 
-	KNN-classifier.
+	
+|githubsmall| hbldh/sudokuextract
+
+
+.. code-block:: bash
+
+	hbldh@devbox ~ $ parse-sudoku --oneliner -p sudoku.jpg > /tmp/sudoku.txt && solve-sudoku --path /tmp/sudoku.txt && rm /tmp/sudoku.txt
+	853|126|749
+	429|873|156
+	167|945|283
+	---+---+---
+	518|239|674
+	342|687|915
+	976|451|832
+	---+---+---
+	794|568|321
+	635|712|498
+	281|394|567
+
+**Desired output:** Sudoku Image Parser
+
+**Unexpected output:** 
+	
+	* |githubmini| ``hbldh/pyefd`` - Elliptical Fourier Descriptors package 
+
+----
+
+:class: center-image
+
+Elliptical Fourier Descriptors
+==============================
+
+|githubsmall| hbldh/pyefd
+
+`Frank P Kuhl, Charles R Giardina, Elliptic Fourier features of a closed contour,
+Computer Graphics and Image Processing, Volume 18, Issue 3, 1982, Pages 236-258 <http://www.sci.utah.edu/~gerig/CS7960-S2010/handouts/Kuhl-Giardina-CGIP1982.pdf>`_
+
+.. image:: images/pyefd.png
+   :height: 500px
+
+Data from: `LeCun et al. (1999): The MNIST Dataset Of Handwritten Digits <http://yann.lecun.com/exdb/mnist/>`_
+
+.. note::
+	
+	I did not find any good implementation of EFD online, so I wrote one.
+
+	EFD provides a means of representing a contour by an array of numbers, providing the means of applying a machine learning solution for classifying images into different digits.
+
+----
+
+
+SudokuExtract
+=============
+
+.. note::
+	
+	It works decently well. I still haven't been able to handle photos of Sudokus on computer screens.
 
 	When this was done I realised that I would never use it since I would never have the energy to take a photo, save it to disk and run a command line tool on it just to solve a Sudoku
 
@@ -281,25 +402,7 @@ SudokuExtract
 
 **Unexpected output:** 
 	
-	* |githubmini| ``hbldh/pyefd`` - Elliptical Fourier Descriptors package 
 	* |githubmini| ``hbldh/xanadoku`` - Web interface for solving Sudokus...
-
-----
-
-:class: center-image
-
-Elliptical Fourier Descriptors
-==============================
-
-|githubsmall| hbldh/pyefd
-
-`Frank P Kuhl, Charles R Giardina, Elliptic Fourier features of a closed contour,
-Computer Graphics and Image Processing, Volume 18, Issue 3, 1982, Pages 236-258 <http://www.sci.utah.edu/~gerig/CS7960-S2010/handouts/Kuhl-Giardina-CGIP1982.pdf>`_
-
-.. image:: images/pyefd.png
-   :height: 500px
-
-Data from: `LeCun et al. (1999): The MNIST Dataset Of Handwritten Digits <http://yann.lecun.com/exdb/mnist/>`_
 
 ----
 
@@ -349,10 +452,12 @@ BankID applications behave differently on iOS, Android, Safari, Chrome, etc.
 I wanted to examine this closer.
 
 .. note::
+	
+	- At work I got an assignment to do a ASP.NET project using BankID signing.
 
 	- BankID mobile applications behave different when called on iOS and Android, from Safari and Chrome, etc.
 
-	- After it was completed I wanted to explore more closely how these things interacted, but I felt like it would take to long to do with C#.
+	- After the assignment was completed I wanted to explore more closely how these things interacted, but I felt like it would take to long to do with C#.
 
 Solution: Python.
 
@@ -362,11 +467,8 @@ Solution: Python.
 BankID exploration project
 ==========================
 
-|githubsmall| hbldh/pybankid
-
-|githubsmall| hbldh/flask-pybankid
-
 |githubsmall| hbldh/pybankid-example-app
+
 
 .. code-block:: python
 
@@ -379,7 +481,7 @@ BankID exploration project
 	
 	- Turned out no one written anything for BankID in Python, so I did it myself.
 
-	- Eventually it turned out that the bankid client became a standalone component.
+	- Eventually it turned out that the bankid client became a useful, standalone component.
 
 	- The standalone component was more fun to write so I did that instead.
 
@@ -389,7 +491,7 @@ BankID exploration project
 
 	- The example app behaviour exploration never really got done though...
 
-**Desired output:** Flask web application using BankID.
+**Desired output:** Flask web application for exploring use of BankID.
 
 **Unexpected output:** 
 
@@ -406,7 +508,13 @@ Curiosity killed the cat...
 
 The BankID thing had a pretty decent project fallout, right?
 
-Let's turn the curiosity up to 11 in the next project!
+Let's look at a more loosly defined project...
+
+.. note::
+
+	The BankID thing had a pretty decent project fallout, right?
+
+	Let's look at a more loosly defined project...
 
 ----
 
@@ -447,9 +555,9 @@ PyBerryIMU
 	
 	I then built a Python package for recording data with it.
 
-	* The accelerometer needed calibration. I read some papers and implemented a method I liked.
+	* The accelerometer needed calibration. I read some papers and implemented a method I liked. This worked so well that I broke it out as a separate package.
 
-	* My friend who was going to use it is not a programmer. I made a web interface for him.
+	* My friend who was going to use it is not a programmer. I made a web interface for him and any other potential interested party.
 
 
 |githubsmall| hbldh/pyberryimu
@@ -489,7 +597,13 @@ I backed two projects on Kickstarter during the prototype stage, so when I was d
 
 They had iOS, Android and C++ APIs.
 
-Guess if they had a Python package?
+Guess if they had Python connectors?
+
+.. note::
+
+	During prototype stage, I backed two other projects on Kickstarter. By the time the previous sensor rig project was done these BLE boards arrived in the mail.
+
+	Guess if they had a Python conectors?
 
 ----
 
@@ -498,13 +612,23 @@ PyMetaWear
 
 |githubsmall| hbldh/pymetawear
 
-This one is currently ongoing, so I cannot say very much about the output yet.
+This one is currently ongoing, so I cannot say very much about the unexpected output yet.
 
 **Desired output:** Python client for MetaWear boards.
 
 **Unexpected output:** 
 
 	* Will probably yield at least one pull request to Python GATT communication libraries.
+
+.. note::
+
+	hbldh/pymetawear
+
+	This one is currently ongoing, so I cannot say very much about the unexpected output yet.
+
+	Desired output: Python client for MetaWear boards.
+
+	Unexpected output: Will probably yield at least one pull request to Python GATT communication libraries.
 
 ----
 
@@ -560,6 +684,22 @@ Archive, version 1
 	* |githubmini| ``hbldh/MongoLab-REST-GAE`` - REST API client for GAE
 	* Notice the past tense in the list above?
 
+.. note ::
+
+	* Flask web app deployed at Google App Engine.
+	* Stored data in MongoDB.
+	* Served files from Dropbox.
+	* Contained 1.5 GB of scanned material.
+
+	Constantly available archive, running free of charge.
+
+	Unexpected output: 
+		
+		* 2 accepted pull requests to `Flask-PyMongo <https://github.com/dcrosta/flask-pymongo>`_
+		* 2 MongoDB certifications!
+		* ``hbldh/MongoLab-REST-GAE`` - REST API client for GAE
+		* Notice the past tense in the list above?
+
 ----
 
 Archive, version 2
@@ -579,6 +719,22 @@ Archive, version 2
 	* PDF manipulation GUI.
 	* Lots of hugs from older members of the association. (Ok, not really unexpected.)
 
+.. note::
+
+	* Flask web app deployed at Heroku.
+	* Storing data in MongoDB.
+	* Serving files from Dropbox.
+	* Serving images from Cloudinary.
+	* Text searching in OCR-parsed material dating back to 1929.
+	* Contains 2.5 GB of scanned material.
+
+	Constantly available archive, still running free of charge.
+
+	Unexpected output:
+		
+		* PDF manipulation GUI.
+		* Lots of hugs from older members of the association. (Ok, not really unexpected.)	
+
 ----
 
 Other projects during the same time
@@ -589,6 +745,15 @@ Other projects during the same time
 |githubmini| ``hbldh/b2ac`` - Ellipse fitting implemented in fixed point C!
 
 ``nExtClient`` - Python client for Nordnet Bank's data API service. Not open sourced yet, needs unit tests first.
+
+.. note::
+
+	``hbldh/skboost`` - Multiple Instance Learning boosting algorithm.
+
+	``hbldh/b2ac`` - Ellipse fitting implemented in fixed point C!
+
+	``nExtClient`` - Python client for Nordnet Bank's data API service. Not open sourced yet, needs unit tests first.
+
 
 ----
 
@@ -616,7 +781,7 @@ Do I really believe that they are worth presenting to others?
 
 Can it be justified to put 200+ hours into a web archive benefitting ~200 people?
 
-.. note:
+.. note::
 
 	None of the packages I have described are in any danger of becoming household Python packages. 
 	Do I really believe that they are worth presenting to others?
