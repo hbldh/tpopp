@@ -326,7 +326,7 @@ SudokuExtract
 
 .. code-block:: bash
 
-	hbldh@devbox ~ $ parse-sudoku --oneliner -p sudoku.jpg > /tmp/sudoku.txt && solve-sudoku --path /tmp/sudoku.txt && rm /tmp/sudoku.txt
+	hbldh@devbox ~ $ parse-sudoku --oneliner -p "sudoku.jpg" > "/tmp/sudoku.txt" && solve-sudoku --path "/tmp/sudoku.txt"
 	853|126|749
 	429|873|156
 	167|945|283
@@ -385,7 +385,7 @@ SudokuExtract
 
 .. code-block:: bash
 
-	hbldh@devbox ~ $ parse-sudoku --oneliner -p sudoku.jpg > /tmp/sudoku.txt && solve-sudoku --path /tmp/sudoku.txt && rm /tmp/sudoku.txt
+	hbldh@devbox ~ $ parse-sudoku --oneliner -p "sudoku.jpg" > "/tmp/sudoku.txt" && solve-sudoku --path "/tmp/sudoku.txt"
 	853|126|749
 	429|873|156
 	167|945|283
@@ -823,7 +823,7 @@ So, what is the point of all these pointless projects?
 
 ----
 
-:class: center-slide
+:class: last-slide
 
 .. note::
 	
@@ -841,6 +841,8 @@ So, what is the point of all these pointless projects?
 	The things I did because I was exited and wanted to see them exist in reality have never let me down and I have never regretted the time I spent on any of them.
 
 ::
+
+	[...]
 
 	I shall be telling this with a sigh 
 	Somewhere ages and ages hence: 

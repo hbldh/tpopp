@@ -37,3 +37,8 @@ dl {
 .step {
 	width: 1000px;
 }
+
+.last-slide {
+	text-align: center;
+	font-size: 30px;
+}
